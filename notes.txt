@@ -1,0 +1,8 @@
+logging levels
+    notset
+    debug
+    info
+    warning
+    error
+    critical
+

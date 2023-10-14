@@ -1,0 +1,28 @@
+INFO:root:Starting game.
+INFO:root:Starting game.
+INFO 2023-10-14 01:19:20,239 - Starting game.
+DEBUG 2023-10-14 01:22:31,729 - Just a debug message
+INFO 2023-10-14 01:22:31,729 - Just an info message
+WARNING 2023-10-14 01:22:31,729 - not now John, I have got to get on with the show
+ERROR 2023-10-14 01:22:31,729 - Did you think you were going to divide by zero here?
+CRITICAL 2023-10-14 01:22:31,730 - The whole thing is going to blow up now
+DEBUG 2023-10-14 01:25:09,778 - Just a debug message
+INFO 2023-10-14 01:25:09,778 - Just an info message
+WARNING 2023-10-14 01:25:09,778 - not now John, I have got to get on with the show
+ERROR 2023-10-14 01:25:09,778 - Did you think you were going to divide by zero here?
+CRITICAL 2023-10-14 01:25:09,778 - The whole thing is going to blow up now
+DEBUG 2023-10-14 01:27:10,969 - Just a debug message
+INFO 2023-10-14 01:27:10,970 - Just an info message
+WARNING 2023-10-14 01:27:10,970 - not now John, I have got to get on with the show
+ERROR 2023-10-14 01:27:10,970 - Did you think you were going to divide by zero here?
+CRITICAL 2023-10-14 01:27:10,970 - The whole thing is going to blow up now
+DEBUG 2023-10-14 01:28:11,359 - Just a debug message
+INFO 2023-10-14 01:28:11,360 - Just an info message
+WARNING 2023-10-14 01:28:11,360 - not now John, I have got to get on with the show
+ERROR 2023-10-14 01:28:11,360 - Did you think you were going to divide by zero here?
+CRITICAL 2023-10-14 01:28:11,360 - The whole thing is going to blow up now
+DEBUG 2023-10-14 01:44:49,776 - Just a debug message
+INFO 2023-10-14 01:44:49,776 - Just an info message
+WARNING 2023-10-14 01:44:49,776 - not now John, I have got to get on with the show
+ERROR 2023-10-14 01:44:49,776 - Did you think you were going to divide by zero here?
+CRITICAL 2023-10-14 01:44:49,777 - The whole thing is going to blow up now
