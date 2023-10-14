@@ -6,3 +6,46 @@ logging levels
     error
     critical
 
+def match_partial_command(partial_input, valid_commands):
+    matching_commands = [cmd for cmd in valid_commands if cmd.startswith(partial_input)]
+    if len(matching_commands) == 1:
+        return matching_commands[0]
+    else:
+        return None
+
+# Example usage:
+valid_commands = ("north", "south", "east", "west", "attack", "inventory", "quit", "look", "open", "close", "use", "talk", "take", 
+                    "drop", "inspect", "equip", "unequip", "save", "load", "help", "status", "map", "spell", "cast", "heal", "eat", 
+                    "drink", "run", "fight", "flee", "defend", "buy", "sell", "trade", "give", "steal", "unlock", "lock", 
+                    "pickpocket", "search", "climb", "jump")
+
+partial_input = "nor"
+matched_command = match_partial_command(partial_input, valid_commands)
+
+if matched_command:
+    print(f"Matched command: {matched_command}")
+else:
+    print("No exact match found.")
+
+
+    ______
+
+def match_complex_command(partial_input, valid_commands):
+    matching_commands = [cmd for cmd in valid_commands if cmd.startswith(partial_input)]
+    if len(matching_commands) == 1:
+        return matching_commands[0]
+    else:
+        return None
+
+# Example usage:
+valid_commands = ("cast fireball north", "cast lightning east", "cast heal self", "cast freeze enemy", "attack orc", "use potion", 
+                    "open door", "talk to NPC")
+
+partial_input = "cast"
+matched_command = match_complex_command(partial_input, valid_commands)
+
+if matched_command:
+    print(f"Matched command: {matched_command}")
+else:
+    print("No exact match found.")
+
