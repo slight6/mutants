@@ -9,8 +9,9 @@ import pathlib
 import csv
 import random
 from game_util import log_output as log
-from monster_util import create_monster
+from game_util import is_prime as is_prime
 from monster_util import Monster
+from area_util import Area
 
 def create_map(file_name):
     """ Creates a new 99 x 99 map of rooms to explore.
@@ -20,6 +21,24 @@ def create_map(file_name):
             success_message (str): A message indicating the map was created.
     """
     
+    
+    with open(file_name, 'w', newline='') as map_file:
+        map_writer = csv.writer(map_file, delimiter=',')
+        # This is obviously a simple implementation.  We'll want to make this more complex later.
+        for x in range(-49, 49, 1):
+            for y in range(-49, 49, 1):
+                area = Area()
+                if is_prime(x) and is_prime(y):
+                    map_writer.writerow([x, y, area.name])
+                else:
+                    if random.randint(1, 100) > 80:
+                        map_writer.writerow([x, y, area.default])
+                    else:    
+                        map_writer.writerow([x, y])
+    return 'Map created successfully.'
+
+    
+    """
     with open(file_name, 'w', newline='') as map_file:
         map_writer = csv.writer(map_file, delimiter=',')
         monster = 0
@@ -32,7 +51,7 @@ def create_map(file_name):
                 else:
                     map_writer.writerow([x, y])
     return 'Map created successfully.'
-    
+    """
 
 def open_map(year_requested):
     """ Opens a map.

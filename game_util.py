@@ -34,3 +34,19 @@ def log_output(input_message, output_file):
     logger.debug(input_message)
     
 
+def is_prime(number):
+    """ Checks if a number is prime.
+        Args:
+            number (int): The number to check.
+        Returns:
+            True if the number is prime, False otherwise.
+    """
+    if number == 1:
+        return False
+    elif number == 2:
+        return True
+    else:
+        for x in range(2, number):
+            if number % x == 0:
+                return False
+        return True
