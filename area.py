@@ -11,10 +11,11 @@ from game_util import log_output as log
 
 
 class Area:
-    def __init__(self, coordinates, description, monsters, items, exits):
+    def __init__(self, x, y, description, monsters, items, exits):
         """ Initialize the Area class.
             Args:
-                coordinates (tuple): The coordinates of the area.
+                x (int): The X coordinate of the area.
+                y (int): The Y coordinate of the area.
                 description (str): The description of the area.
                 monsters (list): The monsters in the area.
                 items (list): The items in the area.
@@ -22,7 +23,8 @@ class Area:
             Returns:
                 None
         """
-        self.coordinates = coordinates
+        self.x = x
+        self.y = y
         self.description = description
         self.monsters = monsters
         self.items = items
@@ -37,7 +39,7 @@ class Area:
                 None
         """
         return (
-            f'Coordinates: {self.coordinates}\n'
+            f'Coordinates: ({self.x}, {self.y})\n'
             f'Description: {self.description}\n'
             f'Monsters: {self.monsters}\n'
             f'Items: {self.items}\n'
@@ -45,6 +47,7 @@ class Area:
         )
     
 
+    @staticmethod
     def get_area(coordinates):
         """ Get an area by coordinates.
             Args:
@@ -52,13 +55,15 @@ class Area:
             Returns:
                 area (Area): The area at the specified coordinates.
         """
+        x, y = map(int, coordinates.split(','))
         with open('map.csv', mode='r') as file:
             reader = csv.DictReader(file)
             for row in reader:
                 if row['coordinates'] == coordinates:
-                    return Area(row['coordinates'], row['description'], row['monsters'], row['items'], row['exits'])
+                    return Area(x, y, row['description'], row['monsters'], row['items'], row['exits'])
 
 
+    @staticmethod
     def get_random_area():
         """ Get a random area.
             Args:
@@ -72,7 +77,8 @@ class Area:
             for row in reader:
                 areas.append(row)
             area = random.choice(areas)
-            return Area(area['coordinates'], area['description'], area['monsters'], area['items'], area['exits'])
+            x, y = map(int, area['coordinates'].split(','))
+            return Area(x, y, area['description'], area['monsters'], area['items'], area['exits'])
     
 
     def create_area(coordinates, description, monsters, items, exits):
@@ -87,6 +93,17 @@ class Area:
                 area (Area): The area created.
         """
         area = Area(coordinates, description, monsters, items, exits)
+        return area
+    
+
+    def create_test_area():
+        """ Create a test area.
+            Args:
+                None
+            Returns:
+                area (Area): The test area created.
+        """
+        area = Area((0, 0), 'You are in a dark room.', [], [], [])
         return area
     
 

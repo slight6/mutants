@@ -7,8 +7,8 @@ import pathlib
 import csv
 import math
 from game_util import log_output as log
-from map_util import create_map, open_map
-from area_util import create_area
+from game_map import create_map as create_map
+
 
 def main():
     """ Initialize a new map.
