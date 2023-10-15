@@ -11,7 +11,7 @@ from map_util import create_map, open_map
 from area_util import create_area
 
 def main():
-    """ Main entrypoint into the game.
+    """ Initialize a new map.
         Args:
             None
         Returns:

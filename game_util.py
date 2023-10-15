@@ -4,7 +4,7 @@ import sys
 import logging
 
 
-def log_output(input_message, output_file):
+def log_output(log_message, output_file):
     """ Sets up the logging for the game.
         Args:
             input_log_info (str): The name of the log file.
@@ -31,7 +31,7 @@ def log_output(input_message, output_file):
                         level=logging.DEBUG,
                         format=LOG_FORMAT,)
     logger = logging.getLogger()
-    logger.debug(input_message)
+    logger.debug(log_message)
     
 
 def is_prime(number):
